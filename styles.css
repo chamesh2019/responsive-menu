@@ -1,1 +1,49 @@
 
+:root {
+  --blue: rgb(61, 90, 254);
+  --light-blue: rgb(254,111,94)
+}
+
+body {
+  background-color: rgb(10, 10, 10);
+  height: 100vh;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: clamp(2em, 8vw, 7em);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  font-family: 'Permanent Marker';
+  padding: clamp(0.25em, 1vw, 1em) clamp(1em, 4vw, 4em);
+}
+
+.link:nth-child(3) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.link:before{
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+  to right,
+  transparent,
+  var(--blue) var(--p), 
+  var(--light-blue)
+  );
+}
+
+.link:hover:before{
+  transition: width 600ms ease;
+  width: 100%
+}
